@@ -129,13 +129,12 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  	text-align: center;
  	a {
  		color: $clouds;
- 		background-color: $midnightBlue;
+ 		background-color: $asbestos;
  		padding: 5px;
  		border-radius: $funkyBorder;
- 		text-decoration: underline;
+ 		text-decoration: none;
  		&:hover {
- 			background-color: lighten($midnightBlue, 10%);
- 			text-decoration: none;
+ 			background-color: lighten($asbestos, 5%);
  		}
  	}
  }
