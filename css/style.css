@@ -139,13 +139,6 @@ body {
 body {
   font-weight: lighter; }
 
-a {
-  color: #000;
-  text-decoration: underline; }
-  a.hover {
-    color: #090485;
-    text-decoration: none; }
-
 .photos {
   width: 100%; }
   .photos .photo {
@@ -153,46 +146,62 @@ a {
     opacity: .7;
     -webkit-transition: 1s all ease;
             transition: 1s all ease;
-    margin: 0; }
+    margin: 0;
+    border: 5px solid #fff;
+    box-shadow: 2px 2px 0 #95a5a6; }
     .photos .photo:hover {
       opacity: 1; }
 
 header {
   padding: 10px;
   z-index: 2;
+  margin: 0;
   background: #fff;
-  width: 100%;
-  font-family: "Oswald", sans-serif; }
+  width: 100%; }
   header p {
-    display: inline;
-    float: left;
-    width: 97.91667%;
-    margin: 0 1.04167%;
     text-transform: none;
-    padding: 10px 0;
-    font-family: "helvetica", sans-serif; }
+    line-height: 1.5; }
   header .viewing {
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase; }
+    background: #fad9a4;
+    border-radius: 80px 10px / 10px 80px;
+    padding: 10px; }
   header h1 {
-    display: inline;
-    float: left;
-    width: 97.91667%;
-    margin: 0 1.04167%;
+    margin: 0;
     font-family: "Oswald", sans-serif;
     text-transform: uppercase; }
   header select {
-    display: inline;
-    float: left;
-    width: 97.91667%;
-    margin: 0 1.04167%;
-    height: 50px;
-    border: 0; }
+    width: 100%;
+    margin: 10px 0;
+    background-color: #fcf3d0;
+    border: 0;
+    height: 50px; }
     header select option {
       font-size: 1em; }
+  header form {
+    margin: 10px 0px; }
+    header form input {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 5px;
+      font-weight: lighter;
+      background-color: #fcf3d0;
+      border-radius: 80px 10px / 10px 80px;
+      -webkit-transition: 1s all ease;
+              transition: 1s all ease;
+      outline: none;
+      height: 50px; }
+      header form input:hover {
+        background-color: #f9e8a0; }
 
 footer {
   text-align: center; }
+  footer a {
+    color: #000;
+    text-decoration: underline; }
+    footer a:hover {
+      color: #090485;
+      text-decoration: none; }
 
 @media screen and (max-width: 1024px) {
   .photos .photo {

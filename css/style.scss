@@ -51,15 +51,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  	font-weight: lighter;
  }
 
- a {
- 	color: #000;
- 	text-decoration: underline;
- 	&.hover {
- 		color: #090485;
- 		text-decoration: none;
- 	}
- }
-
  .photos {
  	width: 100%;
  	.photo {
@@ -67,6 +58,8 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  		opacity: .7;
  		transition: 1s all ease;
  		margin: 0;
+ 		border: 5px solid #fff;
+ 		box-shadow: 2px 2px 0 $concrete;
  		&:hover {
  			opacity: 1;
  		}
@@ -76,36 +69,65 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  header {
  	padding: 10px;
  	z-index: 2;
+ 	margin: 0;
  	background: #fff;
  	width: 100%;
- 	font-family: $headerFonts;
  	p {
- 		@include column (12);
  		text-transform: none;
- 		padding: 10px 0;
- 		font-family: $bodyFont;
+ 		line-height: 1.5;
  	}
  	.viewing {
-		font-family: $headerFonts;
-		text-transform: uppercase;
+ 		background: lighten($orange, 30%);
+ 		border-radius: 80px 10px / 10px 80px;
+ 		padding: 10px;
  	}
  	h1 {
-		@include column(12);
+ 		margin: 0;
 		font-family: $headerFonts;
 		text-transform: uppercase;
  	}
  	select {
- 		@include column(12);
- 		height: 50px;
+ 		width: 100%;
+ 		margin: 10px 0;
+ 		background-color: lighten($sunflower, 40%);
  		border: 0;
+ 		height: 50px;
  		option {
  			font-size: 1em;
+ 		}
+ 	}
+ 	form {
+ 		margin: 10px 0px;
+ 		input {
+ 			display: block;
+ 			width: 100%;
+ 			border: 0;
+ 			padding:5px;
+ 			font-weight: lighter;
+ 			background-color: lighten($sunflower, 40%);
+ 			border-radius: 80px 10px / 10px 80px;
+ 			transition: 1s all ease;
+ 			outline: none;
+ 			height: 50px;
+ 			&:hover {
+ 				background-color: lighten($sunflower, 30%);
+ 			}
+ 		}
+ 		label {
  		}
  	}
  }
 
  footer {
  	text-align: center;
+ 	a {
+ 		color: #000;
+ 		text-decoration: underline;
+ 		&:hover {
+ 			color: #090485;
+ 			text-decoration: none;
+ 		}
+ 	}
  }
 
  // responsive

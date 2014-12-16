@@ -11,11 +11,12 @@
 	<header>
 		<section class="banner">
 			<h1>photos and stuff</h1>
-			<p>This is using the Instagram API to pull in the 20 (maximum) most recent geolocated images from the Wikipedia-provided latitutde and longitude coordinates for each landmark. You get a random one when the page loads and can choose a new one from the dropdown below.</p>
+			<p>This uses the Google and Instagram APIs to geocode strings into latitude/longitude coordinates, and then search for photos taken around that location. It returns the 20 (maximum) most recent Instagram posts. You can choose a preselected landmark from the dropdown menu or search for any location (using addresses, postal codes, landmark names, etc) with the search box.</p>
+			<p>If you're going to use an address or landmark string in the search box, specify the city.</p>
 		</section>
 		<p>Currently viewing: <span class="viewing"></span></p>
 		<select name="place" id="place">
-			<option value="">Pick a landmark.</option>
+			<option value="">Pick a landmark from this dropdown menu.</option>
 			<option class="landmark" value="westminster">Palace of Westminster, London</option>
 			<option class="landmark" value="eiffel">Eiffel Tower, Paris</option>
 			<option class="landmark" value="museumsquartier">Museumsquartier, Vienna</option>
@@ -24,6 +25,9 @@
 			<option class="landmark" value="liberty">Statue of Liberty, New York</option>
 			<option class="landmark" value="basil">St. Basil's Cathedral, Moscow</option>
 		</select>
+		<form id="searchy" action="">
+			<label for="search">Or search for any location: </label><input type="text" id="search">
+		</form>
 	</header>
 	<section class="photos">
 		

@@ -1,43 +1,22 @@
 	var pictures = {};
 
-	var landmarks = {
-	 	westminster: {
-	 		title: 'Palace of Westminster, London',
-	 		lat: 51.499167,
-	 		lng: -0.124722
-	 	},
-	 	eiffel: {
-	 		title: 'Eiffel Tower, Paris',
-	 		lat: 48.858222,
-	 		lng: 2.2945
-	 	},
-	 	museumsquartier: {
-	 		title: 'Museumsquartier, Vienna',
-	 		lat: 48.203333,
-	 		lng: 16.358889
-	 	},
-	 	goldenGate: {
-	 		title: 'Golden Gate Bridge, San Francisco',
-	 		lat: 37.819722,
-	 		lng: -122.478611
-	 	},
-	 	vatican: {
-	 		title: 'St. Peter\'s Square, Vatican',
-	 		lat: 41.902222, 
-	 		lng: 12.456389
-	 	},
-	 	liberty: {
-	 		title: 'Statue of Liberty, New York',
-	 		lat: 40.689167, 
-	 		lng: -74.044444
-	 	},
-	 	basil: {
-	 		title: 'St. Basil\'s Cathedral, Moscow',
-	 		lat: 55.7525, 
-	 		lng: 37.623056
-	 	}
-	}
+	pictures.geocode = function(searchTerm){
 
+		// geocode the inputted address
+		$.ajax({
+			type: 'GET',
+			url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + searchTerm +'&key=AIzaSyBDup_z0u0VSAQ86shWiq0mIMxXLsSFGMs',
+			dataType: 'json',
+			success: function(mapData) {
+				var latitude = mapData.results[0].geometry.location.lat,
+					longitude = mapData.results[0].geometry.location.lng;
+
+				pictures.getPictures(latitude, longitude);
+			
+		}
+	});
+
+}
 	pictures.getPictures = function(lat, lng) {
 		$('.photos').empty();
 
@@ -67,24 +46,30 @@
 		$('.landmark:selected').each(function() {
 	    	// the user wants this!
 	    	$userWants = $(this).val();
-	    	$viewing = landmarks[$userWants].title;
-	    	$('.viewing').text($viewing);
+	    	$userSearch = $(this).text();
+	    	$('.viewing').text($userSearch);
 
-    		pictures.lat = landmarks[$userWants].lat;
-    		pictures.lng = landmarks[$userWants].lng;
-
-	    	pictures.getPictures(pictures.lat, pictures.lng);
+	    	pictures.geocode($userSearch);
 		});
 	});	
 
-	$('document').ready(function() {
-		random = new Array();
+	$('#searchy').on('submit', function(f) {
+		f.preventDefault();
+		$userSearch = $('#search').val();
+		$('.viewing').text($userSearch);
+		pictures.geocode($userSearch);
+	});
 
-		for (places in landmarks) {
-			random.push(places);
+	$('document').ready(function() {
+		random = $('option');
+		number = Math.floor(Math.random() * random.length);
+
+		if (number === 0) {
+			number = Math.floor(Math.random() * random.length);
 		}
 
-		number = Math.floor(Math.random() * random.length);
-		pictures.getPictures(landmarks[random[number]].lat, landmarks[random[number]].lng);
-		$('.viewing').text(landmarks[random[number]].title);
+		value = random[number].textContent;
+		
+		pictures.geocode(value);
+		$('.viewing').text(value);
 	});
