@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Random landmark photo thing (beta)</title>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<section class="banner">
+			<h1>photos and stuff</h1>
+			<p>This is using the Instagram API to pull in the 20 (maximum) most recent geolocated images from the Wikipedia-provided latitutde and longitude coordinates for each landmark. You get a random one when the page loads and can choose a new one from the dropdown below.</p>
+		</section>
+		<p>Currently viewing: <span class="viewing"></span></p>
+		<select name="place" id="place">
+			<option value="">Pick a landmark.</option>
+			<option class="landmark" value="westminster">Palace of Westminster, London</option>
+			<option class="landmark" value="eiffel">Eiffel Tower, Paris</option>
+			<option class="landmark" value="museumsquartier">Museumsquartier, Vienna</option>
+			<option class="landmark" value="goldenGate">Golden Gate Bridge, San Francisco</option>
+			<option class="landmark" value="vatican">St. Peter's Square, Vatican</option>
+			<option class="landmark" value="liberty">Statue of Liberty, New York</option>
+			<option class="landmark" value="basil">St. Basil's Cathedral, Moscow</option>
+		</select>
+	</header>
+	<section class="photos">
+		
+	</section>
+	<footer>
+		<p>Coded with love by <a href="http://kerrywall.com/" target="_blank">Kerry</a>.</p>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="kerrywall">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/pictures.js"></script>
+</body>
+</html>
