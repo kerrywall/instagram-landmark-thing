@@ -49,6 +49,8 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
  body {
  	font-weight: lighter;
+ 	background-color: $clouds;
+ 	color: $midnightBlue;
  }
 
  .photos {
@@ -70,14 +72,14 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  	padding: 10px;
  	z-index: 2;
  	margin: 0;
- 	background: #fff;
  	width: 100%;
  	p {
  		text-transform: none;
  		line-height: 1.5;
  	}
  	.viewing {
- 		background: lighten($orange, 30%);
+ 		background: $wetAsphalt;
+ 		color: $clouds;
  		border-radius: 80px 10px / 10px 80px;
  		padding: 5px;
  	}
@@ -89,9 +91,10 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  	select {
  		width: 100%;
  		margin: 10px 0;
- 		background-color: lighten($sunflower, 40%);
+ 		background-color: $silver;
  		border: 0;
  		height: 50px;
+ 		font-weight: lighter;
  		option {
  			font-size: 1em;
  		}
@@ -104,13 +107,13 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  			border: 0;
  			padding:5px;
  			font-weight: lighter;
- 			background-color: lighten($sunflower, 40%);
+ 			background-color: $silver;
  			border-radius: 80px 10px / 10px 80px;
  			transition: 1s all ease;
  			outline: none;
  			height: 50px;
  			&:hover {
- 				background-color: lighten($sunflower, 30%);
+ 				background-color: lighten($silver, 10%);
  			}
  		}
  		label {
