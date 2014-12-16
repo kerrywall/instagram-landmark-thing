@@ -45,6 +45,9 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	 $headerFonts: 'Oswald', sans-serif;
 	 $bodyFont: 'helvetica', sans-serif;
 
+	// border
+	$funkyBorder: 100px 10px / 10px 100px;
+
  // things
 
  body {
@@ -80,13 +83,14 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  	.viewing {
  		background: $wetAsphalt;
  		color: $clouds;
- 		border-radius: 80px 10px / 10px 80px;
+ 		border-radius: $funkyBorder;
  		padding: 5px;
  	}
- 	h1 {
+ 	h1,h2,h3,h4,h5,h6 {
  		margin: 0;
 		font-family: $headerFonts;
 		text-transform: uppercase;
+		border-radius: $funkyBorder;
  	}
  	select {
  		width: 100%;
@@ -108,7 +112,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  			padding:5px;
  			font-weight: lighter;
  			background-color: $silver;
- 			border-radius: 80px 10px / 10px 80px;
+ 			border-radius: $funkyBorder;
  			transition: 1s all ease;
  			outline: none;
  			height: 50px;
@@ -124,10 +128,13 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
  footer {
  	text-align: center;
  	a {
- 		color: #000;
+ 		color: $clouds;
+ 		background-color: $midnightBlue;
+ 		padding: 5px;
+ 		border-radius: $funkyBorder;
  		text-decoration: underline;
  		&:hover {
- 			color: #090485;
+ 			background-color: lighten($midnightBlue, 10%);
  			text-decoration: none;
  		}
  	}
